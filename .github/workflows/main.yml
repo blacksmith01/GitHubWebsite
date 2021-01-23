@@ -35,8 +35,11 @@ jobs:
         run: dotnet publish BlazorWASM/BlazorWASM.csproj -c Release -o release --nologo
       
       - name: Change Base-Tag in index.html
-        run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorWSAM\/" \/>/g' release/wwwroot/index.html
+        run: sed -i 's/<base href="\/" \/>/<base href="\/GitHubWebsite\/" \/>/g' release/wwwroot/index.html
 
+      - name: Add .nojekyll file
+        run: touch release/wwwroot/.nojekyll
+      
       - name: Deploy to GitHub Pages
         # You may pin to the exact commit or the version.
         # uses: JamesIves/github-pages-deploy-action@132898c54c57c7cc6b80eb3a89968de8fc283505
