@@ -36,7 +36,7 @@ jobs:
           dotnet-version: 3.1
           
       - name: Publish .Net Core Project
-        run: dot net publish BlazorWASM.csproj -c Release -o Release --nologo
+        run: dotnet publish BlazorWASM.csproj -c Release -o Release --nologo
 
       - name: Deploy to GitHub Pages
         # You may pin to the exact commit or the version.
